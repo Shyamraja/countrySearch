@@ -5,7 +5,6 @@ const AllCountries = () => {
    
   const [countries, setCountries] = useState([])
   
- 
   useEffect(() => {
     const getCountries = async () => {
       
@@ -13,12 +12,10 @@ const AllCountries = () => {
         const data = await res.json()
         console.log(data);
         setCountries(data);
-    
     };
   getCountries();
   }, []);
 
- 
   return (
      <>
        {countries.map(country => (
