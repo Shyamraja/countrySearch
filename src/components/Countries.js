@@ -26,9 +26,8 @@ const AllCountries = () => {
   }, []);
 
   return (
-   <div className= "component">
-     <div className="country_top"></div>
-
+   <div className= "country__container">
+    
     <div className="country_bottom">
         {isLoading && !error && <h4> Loading...</h4>}
         {error && !isLoading && <h4>{error}</h4>}
@@ -41,8 +40,8 @@ const AllCountries = () => {
 
              <div className = "country_data">
                 <h3>{country.name.common}</h3>
-                <h6> Population: {country.population}</h6>
-                <h6> Region: {country.region}</h6>
+                <h4> Population: {country.population}</h4>
+                <h4> Region: {country.region}</h4>
               </div>
           </div>
         ))

@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+ 
+.container {
+  width: 1200px;
+  top: 150px;
+  padding: 0px 15px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background: lightblue;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.header {
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: lightcyan;
+  z-index: 50;
   }
-}
+.header h1 {
+   display: flex;
+   align-items: center;
+   font-size: 1.3rem;
+   color: lightgreen;
+  }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.country__bottom {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  row-gap: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.country__card {
+  width: 200px;
+  border-radius: 5px;
+  background: hsl(209, 23%, 22%);
+  color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.country__img img {
+  width: 100%;
+  height: 150px;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.country__data {
+  padding: 20px;
+}
+
+.country__container {
+  margin-top: 100px;
+}
+.country__data h4 {
+  margin-bottom: 10px;
+  font-weight: 300;
+  opacity: 60%;
+}
+.country__bottom h4 {
+  color: #fff;
+  text-align: center;
+  margin-top: 15px;
 }
