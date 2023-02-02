@@ -26,7 +26,7 @@ body {
 }
 
 .header h5 {
-  display: block;
+  display: flex;
   text-align: center;
   font-size: 2rem;
   color: black;
@@ -64,11 +64,13 @@ body {
 .country__data h3 {
   margin-top: 10px;
   margin-bottom: 15px;
-  font-weight: 400;
+  font-size: 19px;
+  font-weight: 600;
 }
 
 .country__data h6 {
   margin-bottom: 10px;
+  font-size: 15px;
   font-weight: 400;
   opacity: 80%;
 }

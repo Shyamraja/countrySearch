@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import SearchInput from "./SearchInput";
 
 const AllCountries = () => {
   const [countries, setCountries] = useState([]);
@@ -8,25 +9,42 @@ const AllCountries = () => {
   const getCountries = async () => {
     try {
       const res = await fetch("https://restcountries.com/v3.1/all");
+      
+      if (!res.ok) throw new Error("Something went wrong!")
+      const data = await res.json()
+      console.log(data)
+      setCountries(data)
 
-      if (!res.ok) throw new Error("Something went wrong!");
-      const data = await res.json();
-      console.log(data);
-      setCountries(data);
-
-      setIsLoading(false);
+      setIsLoading(false)
     } catch (error) {
-      setIsLoading(false);
-      setError(error.message);
+      setIsLoading(false)
+      setError(error.message)
     }
   };
 
+  const getCountryByName = async (countryName) => {
+    try {
+        const res = await fetch(`https://restcountries.com/v3.1/name/${countryName}`);
+        if(!res.ok) throw new Error('Searched country data Not found');
+
+        const data = await res.json()
+        setCountries(data)
+
+        setIsLoading(false)
+      } catch (error) {
+        setIsLoading(false)
+        setError(error.message)
+      }
+  }
   useEffect(() => {
     getCountries();
   }, []);
 
   return (
     <div className="country_wrap">
+         <div className="search">
+              <SearchInput onSearch={getCountryByName}/>
+         </div>
       
       <div className="country__list">
         {isLoading && !error && <h4>Loading........</h4>}
