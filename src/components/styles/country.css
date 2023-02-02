@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Lora", serif;
+}
+
+.container {
+  width: 1200;
+  padding: 0px 15px;
+}
+
+body {
+  background: lightblue;
+}
+
+.header {
+  width: 100%;
+  line-height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: lightskyblue;
+}
+
+.header h5 {
+  display: block;
+  text-align: center;
+  font-size: 2rem;
+  color: black;
+}
+
+.country__list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2.3rem;
+  row-gap: 2.3rem;
+  margin-left: 40px;
+  margin-right: auto;
+}
+
+.country__card {
+  width: 250px;
+  border-radius: 5px;
+  background: hsl(240, 2%, 10%);
+  color: #fff;
+}
+
+.country__img img {
+  width: 100%;
+  height: 150px;
+}
+
+.country_wrap {
+  margin-top: 100px;
+}
+
+.country__data {
+  padding: 20px;
+}
+
+.country__data h3 {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
+.country__data h6 {
+  margin-bottom: 10px;
+  font-weight: 400;
+  opacity: 80%;
+}
+
+.country__list h4 {
+  color: #fff;
+  text-align: center;
+  margin-top: 12px;
+}
+
