@@ -5,6 +5,7 @@ const AllCountries = () => {
   const [countries, setCountries] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
+ 
 
   const getCountries = async () => {
     try {
@@ -66,9 +67,11 @@ const AllCountries = () => {
                 </h6>
                 <h6>Region: {country.region}</h6>
                 <h6>subRegion:{country.subregion}</h6>
+                <h6>Languages: {Object.values(country.languages || []).join(", ")}</h6>
                 <h6>Capital: {country.capital}</h6>
-                <h6>Timezone: {country.timezones}</h6>
+               
               </div>
+
             </div>
       
         ))}

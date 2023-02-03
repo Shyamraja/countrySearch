@@ -4,8 +4,8 @@ const SearchInput = ({onSearch}) => {
 const [input, setInput] = useState("");
 
 const submitHandler = (e) =>{
-    e.preventDefault();
-    onSearch(input);
+    e.preventDefault()
+    onSearch(input)
 };
 
   return (
