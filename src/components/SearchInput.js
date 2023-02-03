@@ -7,6 +7,7 @@ const submitHandler = (e) =>{
     e.preventDefault();
     onSearch(input);
 };
+
   return (
  <form onSubmit = {submitHandler}>
     <input

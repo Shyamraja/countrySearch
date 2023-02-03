@@ -81,3 +81,16 @@ body {
   margin-top: 12px;
 }
 
+::placeholder{
+  color: #fff;
+}
+input {
+  padding: 10px 25px;
+  color: #fff;
+  position: centre;
+  border-radius: 5px;
+  background: rgb(21, 20, 20);
+  margin-bottom: 20px;
+  margin-left: 35px;
+  cursor: pointer;
+}

@@ -41,11 +41,11 @@ const AllCountries = () => {
   }, []);
 
   return (
+    
     <div className="country_wrap">
          <div className="search">
-              <SearchInput onSearch={getCountryByName}/>
+          <SearchInput onSearch={getCountryByName} />
          </div>
-      
       <div className="country__list">
         {isLoading && !error && <h4>Loading........</h4>}
         {error && !isLoading && <h4>{error}</h4>}
@@ -64,8 +64,10 @@ const AllCountries = () => {
                   Population:{" "}
                   {new Intl.NumberFormat().format(country.population)}
                 </h6>
-                <h6> Region: {country.region}</h6>
+                <h6>Region: {country.region}</h6>
+                <h6>subRegion:{country.subregion}</h6>
                 <h6>Capital: {country.capital}</h6>
+                <h6>Timezone: {country.timezones}</h6>
               </div>
             </div>
       
