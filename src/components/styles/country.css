@@ -87,10 +87,22 @@ body {
 input {
   padding: 10px 25px;
   color: #fff;
-  position: centre;
+  position: right;
   border-radius: 5px;
   background: rgb(21, 20, 20);
   margin-bottom: 20px;
-  margin-left: 40px;
+  margin-left: 1200px;
   cursor: pointer;
+}
+.form {
+  margin-top: 0px;
+}
+.country__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.country_info_wrap {
+  margin-top: 120px;
 }

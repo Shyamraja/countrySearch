@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SearchInput from "./SearchInput";
+import { Link } from "react-router-dom";
 
 const AllCountries = () => {
   const [countries, setCountries] = useState([]);
@@ -37,6 +38,7 @@ const AllCountries = () => {
         setError(error.message)
       }
   }
+  
   useEffect(() => {
     getCountries();
   }, []);
@@ -44,15 +46,17 @@ const AllCountries = () => {
   return (
     
     <div className="country_wrap">
+       <div className="country__info">
          <div className="search">
-          <SearchInput onSearch={getCountryByName} />
+            <SearchInput onSearch={getCountryByName} />
          </div>
+       </div>
       <div className="country__list">
         {isLoading && !error && <h4>Loading........</h4>}
         {error && !isLoading && <h4>{error}</h4>}
 
         {countries?.map((country) => (
-        
+          <Link to={`/country/${country.name.common}`}>
             <div className="country__card">
               <div className="country__img">
                 <img src={country.flags.png} alt="" />
@@ -66,14 +70,12 @@ const AllCountries = () => {
                   {new Intl.NumberFormat().format(country.population)}
                 </h6>
                 <h6>Region: {country.region}</h6>
-                <h6>subRegion:{country.subregion}</h6>
-                <h6>Languages: {Object.values(country.languages || []).join(", ")}</h6>
+                <h6>Currencies: {Object.values(country.currencies || []).map(({name}) => name).join(", ")}</h6>
                 <h6>Capital: {country.capital}</h6>
                
               </div>
-
             </div>
-      
+          </Link>
         ))}
       </div>
     </div>
