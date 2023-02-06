@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SearchInput from "./SearchInput";
+import FilterRegional from "./FilterRegional";
 import { Link } from "react-router-dom";
 
 const Countries = () => {
@@ -37,8 +38,24 @@ const Countries = () => {
         setIsLoading(false)
         setError(error.message)
       }
-  }
+  };
   
+  const getCountryByRegion = async (regionName) => {
+    try {
+      const res = await fetch(`https://restcountries.com/v3.1/region/${regionName}`);
+
+      if (!res.ok) throw new Error("Failed..........");
+
+      const data = await res.json();
+      setCountries(data);
+
+      setIsLoading(false);
+    } catch (error) {
+      setIsLoading(false);
+      setError(false);
+    }
+  };
+
   useEffect(() => {
     getCountries();
   }, []);
@@ -50,6 +67,10 @@ const Countries = () => {
          <div className="search">
             <SearchInput onSearch={getCountryByName} />
          </div>
+
+          <div className="filter">
+          <FilterRegional onSelect={getCountryByRegion} />
+        </div>
        </div>
       <div className="country__list">
         {isLoading && !error && <h4>Loading........</h4>}
@@ -61,7 +82,6 @@ const Countries = () => {
               <div className="country__img">
                 <img src={country.flags.png} alt="" />
               </div>
-
               <div className="country__data">
                 <h3>{country.name.common}</h3>
                 <h6>

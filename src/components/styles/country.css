@@ -83,22 +83,33 @@ body {
   text-align: center;
   margin-top: 12px;
 }
+input {
+  padding: 10px 45px;
+  color: #fff;
+  position: right;
+  border-radius: 5px;
+  background:rgb(5, 1, 20);
+  margin-bottom: 20px;
+  cursor: pointer;
+}
 
 ::placeholder{
   color: #fff;
 }
-input {
-  padding: 10px 25px;
-  color: #fff;
-  position: right;
-  border-radius: 5px;
-  background: rgb(21, 20, 20);
-  margin-bottom: 20px;
-  margin-left: 1200px;
-  cursor: pointer;
-}
+
 .form {
   margin-top: 0px;
+}
+
+select {
+  margin-top: 25px;
+  padding: 10px 45px;
+  background:rgb(5, 1, 20);;
+  margin-bottom: 40px;
+  outline: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
 }
 .country__info {
   display: flex;
