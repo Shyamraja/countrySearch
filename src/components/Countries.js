@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import SearchInput from "./SearchInput";
 import { Link } from "react-router-dom";
 
-const AllCountries = () => {
+const Countries = () => {
   const [countries, setCountries] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
@@ -10,7 +10,7 @@ const AllCountries = () => {
 
   const getCountries = async () => {
     try {
-      const res = await fetch("https://restcountries.com/v3.1/all");
+      const res = await fetch(`https://restcountries.com/v3.1/all`);
       
       if (!res.ok) throw new Error("Something went wrong!")
       const data = await res.json()
@@ -72,7 +72,6 @@ const AllCountries = () => {
                 <h6>Region: {country.region}</h6>
                 <h6>Currencies: {Object.values(country.currencies || []).map(({name}) => name).join(", ")}</h6>
                 <h6>Capital: {country.capital}</h6>
-               
               </div>
             </div>
           </Link>
@@ -82,4 +81,4 @@ const AllCountries = () => {
   );
 };
 
-export default AllCountries;
+export default Countries;

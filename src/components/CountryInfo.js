@@ -49,9 +49,17 @@ const getCountryByName = async () => {
                 </h5>
                 <h5>Region: {country.region}</h5>
                 <h5>subRegion:{country.subregion}</h5>
+                <h5>Capital: {country.capital}</h5>
+                <h5>
+                {" "}
+                  Area:{" "}
+                  {new Intl.NumberFormat().format(country.area)}
+                </h5>
+                <h5>Timezone: {country.timezones}</h5>
                 <h5>Languages: {Object.values(country.languages || []).join(", ")}</h5>
                 <h5>Currencies: {Object.values(country.currencies || []).map(({name}) => name).join(", ")}</h5>
-                <h5>Capital: {country.capital}</h5>
+                <h5>Borders: {country.borders.join(" ,")}</h5>
+            
             </div>
         </div>
       </div>
