@@ -59,7 +59,7 @@ const getCountryByName = async () => {
                 <h5>Languages: {Object.values(country.languages || []).join(", ")}</h5>
                 <h5>Currencies: {Object.values(country.currencies || []).map(({name}) => name).join(", ")}</h5>
                 <h5>Borders: {country.borders.join(" ,")}</h5>
-            
+                
             </div>
         </div>
       </div>

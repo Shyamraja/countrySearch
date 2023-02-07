@@ -12,7 +12,7 @@ const submitHandler = (e) =>{
  <form onSubmit = {submitHandler}>
     <input
       type = "text" 
-      placeholder="Type the country's name...." 
+      placeholder="Type the country name...." 
       value={input} 
       onChange={(e) => setInput(e.target.value)}>
     </input>
