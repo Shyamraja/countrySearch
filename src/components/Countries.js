@@ -14,7 +14,14 @@ const Countries = () => {
   const indexOfLastCountry = currentPage * countriesPerPage;
   const indexOfFirstCountry = indexOfLastCountry - countriesPerPage;
   const visibleCountries = countries.slice(indexOfFirstCountry, indexOfLastCountry)
-
+ 
+  const prevPageHandler = () => {
+    if (currentPage !== 1) setCurrentPage(currentPage - 1);
+  };
+  const nextPageHandler = () => {
+    if (currentPage !== numOfTotalPages) setCurrentPage(currentPage + 1);
+  };
+   
   const getCountries = async () => {
     try {
       const res = await fetch(`https://restcountries.com/v3.1/all`);
@@ -66,6 +73,7 @@ const Countries = () => {
     getCountries();
   }, []);
 
+
   return (
     
     <div className="country_wrap">
@@ -103,8 +111,9 @@ const Countries = () => {
           </Link>
         ))}
       </div>
-    <span>previous</span>
+   
     <p>
+    <span onClick = {prevPageHandler}>previous</span>
        {pages.map((page) => (
           <span
              key={page} 
@@ -113,9 +122,8 @@ const Countries = () => {
              {`${page}  | `}
           </span>
           ))}
-      <span>next</span>
-    </p>
-      
+      <span onClick = {nextPageHandler}>next</span>
+    </p>     
     </div>
   );
 };
