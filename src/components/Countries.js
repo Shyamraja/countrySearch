@@ -103,14 +103,15 @@ const Countries = () => {
           </Link>
         ))}
       </div>
-     
+    <span>previous</span>
     <p>
-      <span>previous</span>
-        {pages.map((page) => (
+       {pages.map((page) => (
           <span
-           key={page} 
-          onClick={() => setCurrentPage(page)}>
-          {`${page}  | `}</span>
+             key={page} 
+             onClick={() => setCurrentPage(page)}
+             className = {`${currentPage === page ? "active": " "} `}>
+             {`${page}  | `}
+          </span>
           ))}
       <span>next</span>
     </p>
