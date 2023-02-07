@@ -117,7 +117,19 @@ select {
   justify-content: space-between;
   margin-top: 50px;
 }
-
+.country__info__container{
+  display: flex;
+  column-gap: 2rem;
+}
 .country__info__wrap {
   margin-top: 120px;
+}
+.country__info-left{
+ padding: 20px;
+}
+.country__info-left h5 {
+  margin-bottom: 10px;
+  font-size: 25px;
+  font-weight: 400;
+  opacity: 80%;
 }

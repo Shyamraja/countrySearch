@@ -7,7 +7,13 @@ const Countries = () => {
   const [countries, setCountries] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
- 
+  const [countriesPerPage, setCountriesPerPage] = useState(10);
+  const numOfTotalPages = Math.ceil(countries.length / countriesPerPage);
+  const pages = [...Array(numOfTotalPages + 1).keys()].slice(1);
+  const [currentPage, setCurrentPage] = useState(1);
+  const indexOfLastCountry = currentPage * countriesPerPage;
+  const indexOfFirstCountry = indexOfLastCountry - countriesPerPage;
+  const visibleCountries = countries.slice(indexOfFirstCountry, indexOfLastCountry)
 
   const getCountries = async () => {
     try {
@@ -76,7 +82,7 @@ const Countries = () => {
         {isLoading && !error && <h4>Loading........</h4>}
         {error && !isLoading && <h4>{error}</h4>}
 
-        {countries?.map((country) => (
+        {visibleCountries?.map((country) => (
           <Link to={`/country/${country.name.common}`}>
             <div className="country__card">
               <div className="country__img">
@@ -97,6 +103,18 @@ const Countries = () => {
           </Link>
         ))}
       </div>
+     
+    <p>
+      <span>previous</span>
+        {pages.map((page) => (
+          <span
+           key={page} 
+          onClick={() => setCurrentPage(page)}>
+          {`${page}  | `}</span>
+          ))}
+      <span>next</span>
+    </p>
+      
     </div>
   );
 };
