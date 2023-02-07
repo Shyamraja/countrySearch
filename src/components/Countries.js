@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import SearchInput from "./SearchInput";
 import FilterRegional from "./FilterRegional";
 import { Link } from "react-router-dom";
+import country from "./styles/country.css";
+import pagination from "./styles/pagination.css";
 
 const Countries = () => {
   const [countries, setCountries] = useState([]);
@@ -42,7 +44,6 @@ const Countries = () => {
     try {
         const res = await fetch(`https://restcountries.com/v3.1/name/${countryName}`);
         if(!res.ok) throw new Error('Searched country data Not found');
-
         const data = await res.json()
         setCountries(data)
 
@@ -56,9 +57,7 @@ const Countries = () => {
   const getCountryByRegion = async (regionName) => {
     try {
       const res = await fetch(`https://restcountries.com/v3.1/region/${regionName}`);
-
-      if (!res.ok) throw new Error("Failed..........");
-
+      if (!res.ok) throw new Error("Failed to load the country by region..");
       const data = await res.json();
       setCountries(data);
 
@@ -111,19 +110,19 @@ const Countries = () => {
           </Link>
         ))}
       </div>
-   
-    <p>
-    <span onClick = {prevPageHandler}>previous</span>
-       {pages.map((page) => (
-          <span
-             key={page} 
-             onClick={() => setCurrentPage(page)}
-             className = {`${currentPage === page ? "active": " "} `}>
-             {`${page}  | `}
-          </span>
-          ))}
-      <span onClick = {nextPageHandler}>next</span>
-    </p>     
+     
+       <div className ="country_pages">
+         <span onClick = {prevPageHandler}>Previous</span>
+          {pages.map((page) => (
+              <span
+                key={page} 
+                onClick={() => setCurrentPage(page)}
+                className = {`${currentPage === page ? "active": " "} `}>
+                {`${page}  | `}
+              </span>
+            ))}
+          <span onClick = {nextPageHandler}>Next</span> 
+       </div>     
     </div>
   );
 };

@@ -8,7 +8,7 @@ const FilterRegional = ({ onSelect }) => {
 
   return (
     <select onChange={selectHandler}>
-      <option className="option">Filter by Region</option>
+      <option className="option">Filter Countries by Region</option>
        <option className="option" value="Africa">
          Africa
       </option>

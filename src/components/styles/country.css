@@ -26,7 +26,7 @@ body {
 }
 
 .header h5 {
-  display: flex;
+  display: block;
   text-align: center;
   font-size: 2rem;
   color: black;
@@ -37,7 +37,7 @@ body {
   flex-wrap: wrap;
   column-gap: 2.3rem;
   row-gap: 2.3rem;
-  margin-left: 40px;
+  margin-left: 50px;
   margin-right: auto;
 }
 
@@ -84,17 +84,18 @@ body {
   margin-top: 12px;
 }
 input {
-  padding: 10px 45px;
-  color: #fff;
+  padding: 10px 65px;
+  color: black;
   position: right;
+  margin-left:38px;
   border-radius: 5px;
-  background:rgb(5, 1, 20);
+  background:lightskyblue;
   margin-bottom: 20px;
   cursor: pointer;
 }
 
 ::placeholder{
-  color: #fff;
+  color: black;
 }
 
 .form {
@@ -103,12 +104,13 @@ input {
 
 select {
   margin-top: 25px;
-  padding: 10px 45px;
-  background:rgb(5, 1, 20);;
+  padding: 10px 65px;
+  background:lightskyblue;
   margin-bottom: 40px;
+  margin-right:44px;
   outline: none;
   border-radius: 5px;
-  color: #fff;
+  color:black;
   cursor: pointer;
 }
 .country__info {
