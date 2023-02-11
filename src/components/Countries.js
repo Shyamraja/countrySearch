@@ -76,10 +76,20 @@ const Countries = () => {
   return (
     
     <div className="country_wrap">
+      
        <div className="country__info">
          <div className="search">
             <SearchInput onSearch={getCountryByName} />
          </div>
+
+        <select onChange = {(e) => setCountriesPerPage(e.target.value)}>
+          
+         <option value="10">Contries Per Page:10</option>
+         <option value="20">Contries Per Page:20</option>
+         <option value="30">Contries Per Page:30</option>
+         <option value="40">Contries Per Page:40</option>
+         <option value="50">Contries Per Page:50</option>
+        </select>
 
           <div className="filter">
           <FilterRegional onSelect={getCountryByRegion} />
@@ -122,6 +132,8 @@ const Countries = () => {
               </span>
             ))}
           <span onClick = {nextPageHandler}>Next</span> 
+
+         
        </div>     
     </div>
   );
