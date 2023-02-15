@@ -1,10 +1,16 @@
-# Getting Started with Create React App
+# Country Finder App
+This is a web application in React.User can find the information of the countries in this world with their flag.After clicking in the country's card then user can find the detail information of each countries and users can come back to the main page.Pagination is displayed to show 10 countriess per page. User can also choose option to display the number of countries per page. User can view countries filtering regions as well.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Live link for the project is
+ https://searchthecountry.netlify.app/
+
+## Developed with:
+React, React Hooks, React Router DOM, CSS and frontawesome stylings.
+Uploaded to netlify.
 
 ## Available Scripts
 
-In the project directory, you can run:
+User can also clone the repository and In the project directory, you can run:npm install and install react router.
 
 ### `npm start`
 
@@ -61,10 +67,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/m
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

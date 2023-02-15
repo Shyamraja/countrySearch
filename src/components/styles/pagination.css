@@ -1,11 +1,11 @@
 .country_pages {
- display: flex;
- align-items: center;
- margin-left: 350px;
- margin-top: 15px;
- margin-bottom: 15px;
-
+   display: flex;
+   align-items: center;
+   margin-left: 350px;
+   margin-top: 15px;
+  margin-bottom: 15px;
 }
+
 .active {
  color:black;
  font-size: 25px;
